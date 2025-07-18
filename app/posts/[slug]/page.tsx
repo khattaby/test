@@ -1,6 +1,7 @@
 import { prisma } from "@/lib/prisma";
 
-const PostPage = async ({ params }: { params: { slug: string } }) => {
+// @ts-ignore
+const PostPage = async ({ params }) => {
   const post = await prisma.post.findUnique({
     where: { slug: params.slug },
   });
