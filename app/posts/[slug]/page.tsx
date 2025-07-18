@@ -1,6 +1,6 @@
 import { prisma } from "@/lib/prisma";
-import { cache } from "react";
-type type = {
+// import { cache } from "react";
+type Props = {
   params: { slug: string };
 };
 
@@ -10,7 +10,7 @@ type type = {
 //   });
 // });
 
-const PostPage = async ({ params }: type) => {
+const PostPage = async ({ params }: Props) => {
   const post = await prisma.post.findUnique({
     where: { slug: params.slug },
   });
