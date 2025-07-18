@@ -1,6 +1,6 @@
 import { prisma } from "@/lib/prisma";
 
-// @ts-expect-error
+// @ts-expect-error - needed for dynamic route params
 const PostPage = async ({ params }) => {
   const post = await prisma.post.findUnique({
     where: { slug: params.slug },
