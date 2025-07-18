@@ -1,12 +1,6 @@
 import { prisma } from "@/lib/prisma";
 
-interface PageProps {
-  params: {
-    slug: string;
-  };
-}
-
-const PostPage = async ({ params }: PageProps) => {
+const PostPage = async ({ params }: { params: { slug: string } }) => {
   const post = await prisma.post.findUnique({
     where: { slug: params.slug },
   });
