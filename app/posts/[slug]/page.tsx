@@ -7,7 +7,7 @@ import { prisma } from "@/lib/prisma";
 //   });
 // });
 
-const PostPage = async ({ params }: any) => {
+const PostPage = async ({ params }: { params: { slug: string } }) => {
   const post = await prisma.post.findUnique({
     where: { slug: params.slug },
   });
