@@ -4,11 +4,11 @@ type type = {
   params: { slug: string };
 };
 
-const getCachedPost = cache((slug: string) => {
-  return prisma.post.findUnique({
-    where: { slug },
-  });
-});
+// const getCachedPost = cache((slug: string) => {
+//   return prisma.post.findUnique({
+//     where: { slug },
+//   });
+// });
 
 const PostPage = async ({ params }: type) => {
   const post = await prisma.post.findUnique({
